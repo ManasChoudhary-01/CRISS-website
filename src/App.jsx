@@ -4,13 +4,14 @@ import ReactGA from "react-ga4";
 
 import Loader from "./components/Loader/Loader";
 import Home from "./components/Home/Home";
+import ErrorPage from "./components/ErrorPage/ErrorPage";
 const Sponsorship = lazy(() => import("./components/sponsorship/Sponsorship"));
 const Competitions = lazy(() => import("./components/competitions/Competitions"));
 const Achievements = lazy(() => import("./components/Achievements/Achievements"));
 const Team = lazy(() => import("./components/Team/Team"));
 const Alumni = lazy(() => import("./components/Alumni/Alumni"));
 const Developer = lazy(() => import("./components/Developer/Developer"));
-const IRCPage = lazy(() => import("./components/IRCPage/IRCPage"));  
+const IRCPage = lazy(() => import("./components/IRCPage/IRCPage")); 
 // const Events = lazy(() => import("./components/Events/Events"));
 // const Funding = lazy(() => import("./components/Funding/Funding"));
 
@@ -33,6 +34,7 @@ function App() {
             <Suspense fallback={<Loader />}>
                 <Routes>
                     <Route path="/" element={<Home />} />
+                    <Route path="*" element={<ErrorPage />} />
                     <Route path="/sponsorship" element={<Sponsorship />} />
                     <Route path="/competitions" element={<Competitions />} />
                     <Route path="/team" element={<Team />} />

@@ -1,0 +1,351 @@
+.errorContainer {
+  height: 100dvh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #F8FAFC 0%, #E2E8F0 100%);
+  padding: 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.contentWrapper {
+  max-width: 600px;
+  text-align: center;
+  position: relative;
+  z-index: 10;
+}
+
+/* Robot Animation */
+.robotWrapper {
+  width: 200px;
+  height: 240px;
+  margin: 0 auto 2rem;
+  animation: float 3s ease-in-out infinite;
+}
+
+.robot {
+  width: 100%;
+  height: 100%;
+  filter: drop-shadow(0 10px 30px rgba(20, 161, 232, 0.2));
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+/* Robot Parts Animations */
+.antenna {
+  animation: antennaWave 2s ease-in-out infinite;
+  transform-origin: 100px 30px;
+}
+
+@keyframes antennaWave {
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(-10deg);
+  }
+  75% {
+    transform: rotate(10deg);
+  }
+}
+
+.antennaBulb {
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.4;
+  }
+}
+
+.eyeLeft, .eyeRight {
+  animation: blink 4s ease-in-out infinite;
+}
+
+@keyframes blink {
+  0%, 45%, 55%, 100% {
+    transform: scaleY(1);
+  }
+  50% {
+    transform: scaleY(0.1);
+  }
+}
+
+.armLeft {
+  animation: waveLeft 2.5s ease-in-out infinite;
+  transform-origin: 45px 95px;
+}
+
+.armRight {
+  animation: waveRight 2.5s ease-in-out infinite;
+  transform-origin: 155px 95px;
+}
+
+@keyframes waveLeft {
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(-15deg);
+  }
+}
+
+@keyframes waveRight {
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(15deg);
+  }
+}
+
+.handLeft, .handRight {
+  animation: handPulse 2.5s ease-in-out infinite;
+}
+
+@keyframes handPulse {
+  0%, 100% {
+    r: 8;
+  }
+  50% {
+    r: 10;
+  }
+}
+
+/* Error Code */
+.errorCode {
+  font-size: 8rem;
+  font-weight: 800;
+  line-height: 1;
+  margin-bottom: 1rem;
+  color: #00275B;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.four, .zero, .fourTwo {
+  display: inline-block;
+  animation: bounce 1s ease-in-out infinite;
+}
+
+.four {
+  animation-delay: 0s;
+}
+
+.zero {
+  animation-delay: 0.1s;
+  color:#14A1E8;
+}
+
+.fourTwo {
+  animation-delay: 0.2s;
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Text Content */
+.title {
+  font-family: "Inter", sans-serif;
+  font-size: 30px;
+  font-weight: 700;
+  color: #1E293B;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+.description {
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
+  color: #64748B;
+  margin-bottom: 2.5rem;
+  line-height: 1.6;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Buttons */
+.buttonGroup {
+  display: flex;
+  gap: 18px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 3rem;
+}
+
+.primaryButton,
+.secondaryButton {
+  font-family: "Inter", sans-serif;  
+  padding: 10px 20px;
+  border-radius: 0.5rem;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.primaryButton {
+  background: #14A1E8;
+  color: #FFFFFF;
+  box-shadow: 0 4px 12px rgba(20, 161, 232, 0.3);
+}
+
+.primaryButton:hover {
+  background: #1290D0;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(20, 161, 232, 0.4);
+}
+
+.primaryButton:active {
+  transform: translateY(0);
+}
+
+.secondaryButton {
+  background:  #FFFFFF;
+  color: #00275B;
+  border: 2px solid #E2E8F0;
+}
+
+.secondaryButton:hover {
+  border-color: #14A1E8;
+  color: #14A1E8;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(20, 161, 232, 0.15);
+}
+
+.secondaryButton:active {
+  transform: translateY(0);
+}
+
+/* Background Decoration */
+.bgDecoration {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.circle1,
+.circle2,
+.circle3 {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.1;
+}
+
+.circle1 {
+  width: 400px;
+  height: 400px;
+  background: #14A1E8;
+  top: -200px;
+  right: -200px;
+  animation: rotate 20s linear infinite;
+}
+
+.circle2 {
+  width: 300px;
+  height: 300px;
+  background:#00275B;
+  bottom: -150px;
+  left: -150px;
+  animation: rotate 25s linear infinite reverse;
+}
+
+.circle3 {
+  width: 200px;
+  height: 200px;
+  background:#14A1E8;
+  top: 50%;
+  left: 10%;
+  animation: float 8s ease-in-out infinite;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .errorContainer {
+    padding: 1.5rem;
+  }
+
+  .robotWrapper {
+    width: 160px;
+    height: 192px;
+    margin-bottom: 1.5rem;
+  }
+
+  .errorCode {
+    font-size: 5rem;
+    gap: 0.5rem;
+  }
+
+  .title {
+    font-size: 25px;
+  }
+
+  .description {
+    margin-bottom: 2rem;
+  }
+
+  .buttonGroup {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .primaryButton,
+  .secondaryButton {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .errorCode {
+    font-size: 4rem;
+  }
+
+  .description {
+    font-size: 13px;
+  }
+
+  .circle1,
+  .circle2 {
+    width: 250px;
+    height: 250px;
+  }
+}
